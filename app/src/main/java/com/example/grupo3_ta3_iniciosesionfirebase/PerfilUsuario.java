@@ -51,7 +51,7 @@ public class PerfilUsuario extends AppCompatActivity {
         db_reference = FirebaseDatabase.getInstance().getReference().child("Grupo");
     }
     public void leerTweets(){
-        db_reference.child("Grupo 0").child("tweets")
+        db_reference.child("Grupo3").child("tweets")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -72,7 +72,7 @@ public class PerfilUsuario extends AppCompatActivity {
         Map<String, String> hola_tweet = new HashMap<String, String>();
         hola_tweet.put("autor", autor);
         hola_tweet.put("fecha", fecha);
-        DatabaseReference tweets = db_reference.child("Grupo 0").child("tweets");
+        DatabaseReference tweets = db_reference.child("Grupo3").child("Tweets");
         tweets.setValue(tweet);
         tweets.child(tweet).child("autor").setValue(autor);
         tweets.child(tweet).child("fecha").setValue(fecha);
